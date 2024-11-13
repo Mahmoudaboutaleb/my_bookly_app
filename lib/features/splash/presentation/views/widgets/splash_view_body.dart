@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:my_bookly_app/constans.dart';
 import 'package:my_bookly_app/core/utilies/assets.dart';
+import 'package:my_bookly_app/features/home/presentation/views/home_view.dart';
+import 'package:my_bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -16,11 +20,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
-    slidingAnimation = Tween<Offset>(begin: Offset(0, 5), end: Offset.zero)
-        .animate(animationController);
-    animationController.forward();
+    initAnimationText();
+
+    navigateToHome();
   }
 
   @override
@@ -39,19 +41,26 @@ class _SplashViewBodyState extends State<SplashViewBody>
           AssetsData.logo,
         ),
         SizedBox(height: 7),
-        AnimatedBuilder(
-            animation: slidingAnimation,
-            builder: (BuildContext context, _) {
-              return SlideTransition(
-                position: slidingAnimation,
-                child: Text(
-                  textAlign: TextAlign.center,
-                  'Read Free Books',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              );
-            }),
+        SlidingText(slidingAnimation: slidingAnimation),
       ],
     );
+  }
+
+  void navigateToHome() {
+    Future.delayed(
+      Duration(seconds: 3),
+      () {
+        Get.to(() => HomePage(),
+            transition: Transition.fade, duration: kTransitiionDuration);
+      },
+    );
+  }
+
+  void initAnimationText() {
+    animationController =
+        AnimationController(vsync: this, duration: Duration(seconds: 1));
+    slidingAnimation = Tween<Offset>(begin: Offset(0, 5), end: Offset.zero)
+        .animate(animationController);
+    animationController.forward();
   }
 }
