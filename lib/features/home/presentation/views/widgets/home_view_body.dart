@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_bookly_app/core/utilies/styles.dart';
+import 'package:my_bookly_app/features/home/presentation/views/widgets/best_sellerl_ist_view_widget.dart';
 import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_appbar.dart';
-import 'package:my_bookly_app/features/home/presentation/views/widgets/features_list_view_item.dart';
+import 'package:my_bookly_app/features/home/presentation/views/widgets/features_list_view_widget.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -14,7 +15,7 @@ class HomeViewBody extends StatelessWidget {
         CustomAppbar(),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: FeatureBookListView(),
+          child: FeatureBookListViewWidget(),
         ),
         Padding(
           padding: const EdgeInsets.all(10.0),
@@ -23,6 +24,7 @@ class HomeViewBody extends StatelessWidget {
             style: Styles.titleMedia,
           ),
         ),
+        BestSellerlIstViewWidget(),
       ],
     );
   }
