@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_bookly_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
-import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_appbar.dart';
+import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_home_appbar.dart';
 import 'package:my_bookly_app/features/home/presentation/views/widgets/features_list_view_widget.dart';
 
 class HomeViewBody extends StatelessWidget {
