@@ -22,7 +22,9 @@ class BookDetailsViewBody extends StatelessWidget {
             const SizedBox(height: 5),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * 0.265),
-              child: CustomImageFeature(),
+              child: CustomImageFeature(
+                urlImage: '',
+              ),
             ),
             TitleBookDetails(),
             SizedBox(

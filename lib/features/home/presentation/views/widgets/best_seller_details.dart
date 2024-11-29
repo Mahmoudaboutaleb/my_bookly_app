@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_bookly_app/core/utilies/styles.dart';
+import 'package:my_bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:my_bookly_app/features/home/presentation/views/widgets/raring_and_price.dart';
 
 class BestSellerdetails extends StatelessWidget {
-  const BestSellerdetails({super.key});
+  const BestSellerdetails({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +16,14 @@ class BestSellerdetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Harry Potter and the Goblet of Fire',
+              bookModel.volumeInfo.title ?? "Title",
               style: Styles.textStyle20,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
             ),
             const SizedBox(height: 5),
             Text(
-              'J.K. Rowling',
+              bookModel.volumeInfo.authors![0],
               style: Styles.textStyle18.copyWith(
                 color: Colors.grey,
               ),
@@ -29,7 +31,10 @@ class BestSellerdetails extends StatelessWidget {
             SizedBox(
               height: 4,
             ),
-            RatingAndPriceWidget(),
+            RatingAndPriceWidget(
+              rating: 4.8,
+              count: "(2670)",
+            ),
           ],
         ),
       ),

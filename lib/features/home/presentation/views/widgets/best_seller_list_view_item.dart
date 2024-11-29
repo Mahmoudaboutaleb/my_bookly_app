@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_bookly_app/core/utilies/app_route.dart';
-import 'package:my_bookly_app/core/utilies/assets.dart';
+import 'package:my_bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:my_bookly_app/features/home/presentation/views/widgets/best_seller_details.dart';
+import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_image_feature.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
-
+  const BestSellerListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -16,25 +17,17 @@ class BestSellerListViewItem extends StatelessWidget {
         GoRouter.of(context).push(AppRoute.kBookDetails);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
         child: Row(
           children: [
             SizedBox(
-              height: height * .16,
-              child: AspectRatio(
-                aspectRatio: 2.35 / 4,
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.grey),
-                      image: DecorationImage(
-                          image: AssetImage(AssetsData.testImage),
-                          fit: BoxFit.cover)),
-                ),
-              ),
+              height: height * .17,
+              child: CustomImageFeature(
+                  urlImage: bookModel.volumeInfo.imageLinks.thumbnail),
             ),
-            BestSellerdetails(),
+            BestSellerdetails(
+              bookModel: bookModel,
+            ),
           ],
         ),
       ),

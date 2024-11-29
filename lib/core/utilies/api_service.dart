@@ -2,7 +2,7 @@
 import 'package:dio/dio.dart';
 
 class ApiService {
-  final String _baseUrl = "https://www.googleapis.com/books/v1/";
+  final _baseUrl = "https://www.googleapis.com/books/v1/";
   Dio dio;
   ApiService({
     required this.dio,
