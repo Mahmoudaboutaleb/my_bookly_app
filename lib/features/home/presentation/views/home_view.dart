@@ -11,14 +11,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     HomeRepoImplement homeRepoImplement =
         HomeRepoImplement(apiService: ApiService(dio: Dio()));
-    Future<void> _refreshData(BuildContext context) async {
-      await homeRepoImplement.fetchFeatureBook();
+    Future<void> refreshData(BuildContext context) async {
+      await homeRepoImplement.fetchFeatureBooks();
     }
 
     return Scaffold(
       body: RefreshIndicator(
         onRefresh: () {
-          return _refreshData(context);
+          return refreshData(context);
         },
         child: Column(
           children: [

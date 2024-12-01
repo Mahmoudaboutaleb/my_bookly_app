@@ -14,7 +14,7 @@ class BestSellerListViewItem extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRoute.kBookDetails);
+        GoRouter.of(context).push(AppRoute.kBookDetails, extra: bookModel);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 0),
