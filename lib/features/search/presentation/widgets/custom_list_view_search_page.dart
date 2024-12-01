@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_bookly_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
+import 'package:my_bookly_app/features/home/presentation/views/widgets/newest_books_list_view.dart';
 
 class CustomListViewSearchPage extends StatelessWidget {
   const CustomListViewSearchPage({super.key});

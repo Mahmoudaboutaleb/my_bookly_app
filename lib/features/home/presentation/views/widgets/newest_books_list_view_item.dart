@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_bookly_app/core/utilies/app_route.dart';
 import 'package:my_bookly_app/features/home/data/models/book_model/book_model.dart';
-import 'package:my_bookly_app/features/home/presentation/views/widgets/best_seller_details.dart';
+import 'package:my_bookly_app/features/home/presentation/views/widgets/newest_books_details.dart';
 import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_image_feature.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
@@ -17,7 +17,7 @@ class BestSellerListViewItem extends StatelessWidget {
         GoRouter.of(context).push(AppRoute.kBookDetails);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 0),
         child: Row(
           children: [
             SizedBox(

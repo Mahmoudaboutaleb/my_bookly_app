@@ -1,10 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:my_bookly_app/core/widgets/custom_loading_indicator.dart';
 import 'package:my_bookly_app/features/home/presentation/manager/featured%20book_cubit/featured_book_cubit.dart';
 import 'package:my_bookly_app/features/home/presentation/manager/featured%20book_cubit/featured_book_state.dart';
+import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_image_feature.dart';
 
 class FeatureBookListViewWidget extends StatelessWidget {
   const FeatureBookListViewWidget({super.key});
@@ -25,11 +25,9 @@ class FeatureBookListViewWidget extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 3),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
-                    child: CachedNetworkImage(
-                        fit: BoxFit.fill,
-                        imageUrl:
-                            state.books[index].volumeInfo.imageLinks.thumbnail,
-                        width: 150),
+                    child: CustomImageFeature(
+                        urlImage:
+                            state.books[index].volumeInfo.imageLinks.thumbnail),
                   ),
                 );
               },

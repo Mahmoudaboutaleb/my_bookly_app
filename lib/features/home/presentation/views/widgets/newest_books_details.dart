@@ -21,7 +21,7 @@ class BestSellerdetails extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 8),
             Text(
               bookModel.volumeInfo.authors![0],
               style: Styles.textStyle18.copyWith(
@@ -29,7 +29,7 @@ class BestSellerdetails extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 4,
+              height: 7,
             ),
             RatingAndPriceWidget(
               rating: 4.8,
