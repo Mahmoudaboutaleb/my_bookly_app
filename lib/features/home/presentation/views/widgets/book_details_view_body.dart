@@ -14,13 +14,12 @@ class BookDetailsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5),
+      padding: const EdgeInsets.symmetric(vertical: 0),
       child: SingleChildScrollView(
         physics: AlwaysScrollableScrollPhysics(),
         child: Column(
           children: [
             CustomBookDetailsAppbar(),
-            const SizedBox(height: 5),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * 0.265),
               child: CustomImageFeature(
@@ -31,11 +30,13 @@ class BookDetailsViewBody extends StatelessWidget {
               bookModel: bookModel,
             ),
             SizedBox(
-              height: 25,
+              height: 18,
             ),
-            PriceAndFreeReviewBookDetails(),
+            PriceAndFreeReviewBookDetails(
+              bookModel: bookModel,
+            ),
             SizedBox(
-              height: 25,
+              height: 18,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * 0.03),

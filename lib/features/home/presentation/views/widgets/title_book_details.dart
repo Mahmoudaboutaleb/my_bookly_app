@@ -9,16 +9,16 @@ class TitleBookDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      const SizedBox(height: 18),
+      const SizedBox(height: 15),
       Text(
         textAlign: TextAlign.center,
         bookModel.volumeInfo.title ?? "",
-        style: Styles.textStyle24.copyWith(fontSize: 30),
+        style: Styles.textStyle24.copyWith(fontSize: 31),
       ),
       Text(
         bookModel.volumeInfo.authors?[0] ?? "",
-        style: Styles.textStyle22.copyWith(
-          color: Colors.blueGrey,
+        style: Styles.textStyle20.copyWith(
+          color: const Color(0xFF59ABD4),
         ),
       ),
       const SizedBox(height: 3),

@@ -9,7 +9,9 @@ import 'package:my_bookly_app/features/home/presentation/manager/featured%20book
 import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_image_feature.dart';
 
 class FeatureBookListViewWidget extends StatelessWidget {
-  const FeatureBookListViewWidget({super.key});
+  const FeatureBookListViewWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,8 @@ class FeatureBookListViewWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     child: GestureDetector(
                       onTap: () {
-                        GoRouter.of(context).push(AppRoute.kBookDetails);
+                        GoRouter.of(context).push(AppRoute.kBookDetails,
+                            extra: state.books[index]);
                       },
                       child: CustomImageFeature(
                           urlImage: state

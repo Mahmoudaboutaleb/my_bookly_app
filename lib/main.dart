@@ -104,7 +104,7 @@ class HomePage extends StatelessWidget {
         onRefresh: () => _refreshData(context),
         child: ListView(
           children: [
-            HomeViewBody(), // يمكن أن يحتوي على ويدجت عرض الكتب
+            HomeViewBody(),
           ],
         ),
       ),
