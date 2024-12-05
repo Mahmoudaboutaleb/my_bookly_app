@@ -23,7 +23,7 @@ class BestSellerdetails extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              bookModel.volumeInfo.authors![0],
+              bookModel.volumeInfo.authors?[0] ?? "unknown",
               style: Styles.textStyle18.copyWith(
                 color: Colors.grey,
               ),

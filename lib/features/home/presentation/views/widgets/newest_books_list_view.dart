@@ -4,7 +4,7 @@ import 'package:my_bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:my_bookly_app/core/widgets/custom_loading_indicator.dart';
 import 'package:my_bookly_app/features/home/presentation/manager/featured%20newest%20book_cubit/featured_newest_book_cubit.dart';
 import 'package:my_bookly_app/features/home/presentation/manager/featured%20newest%20book_cubit/featured_newest_book_state.dart';
-import 'package:my_bookly_app/features/home/presentation/views/widgets/newest_books_list_view_item.dart';
+import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_list_view_item.dart';
 
 class BestSellerlistView extends StatelessWidget {
   const BestSellerlistView({super.key});
@@ -23,7 +23,7 @@ class BestSellerlistView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: BestSellerListViewItem(
+                    child: CustomListViewItem(
                       bookModel: state.books[index],
                     ),
                   );

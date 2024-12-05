@@ -5,8 +5,8 @@ import 'package:my_bookly_app/features/home/data/models/book_model/book_model.da
 import 'package:my_bookly_app/features/home/presentation/views/widgets/newest_books_details.dart';
 import 'package:my_bookly_app/features/home/presentation/views/widgets/custom_image_feature.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key, required this.bookModel});
+class CustomListViewItem extends StatelessWidget {
+  const CustomListViewItem({super.key, required this.bookModel});
   final BookModel bookModel;
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:my_bookly_app/core/utilies/app_route.dart';
 import 'package:my_bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:my_bookly_app/core/widgets/custom_loading_indicator.dart';
 import 'package:my_bookly_app/features/home/data/models/book_model/book_model.dart';
@@ -21,11 +23,15 @@ class SimilarBookListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               physics: BouncingScrollPhysics(),
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 3),
-                  child: CustomImageFeature(
-                      urlImage: state
-                          .bookModel[index].volumeInfo.imageLinks.thumbnail),
+                return GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).push(AppRoute.kBookDetails,extra: state.bookModel[index]);},
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 3),
+                    child: CustomImageFeature(
+                        urlImage: state
+                            .bookModel[index].volumeInfo.imageLinks.thumbnail),
+                  ),
                 );
               },
               itemCount: state.bookModel.length,

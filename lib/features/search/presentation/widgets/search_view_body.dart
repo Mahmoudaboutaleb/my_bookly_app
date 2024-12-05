@@ -16,7 +16,7 @@ class SearchViewBody extends StatelessWidget {
         SizedBox(
           height: 5,
         ),
-        CustomListViewSearchPage()
+        Expanded(child: CustomListViewSearchPage())
       ],
     );
   }
